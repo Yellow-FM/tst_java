@@ -1,3 +1,5 @@
+import dev.failsafe.internal.util.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RSHBTest  extends SimpleSearchTest{
@@ -11,6 +13,9 @@ public class RSHBTest  extends SimpleSearchTest{
         mainPage.openWebSite(BASE_URL);
         //mainPage.clickOnSearch();
         mainPage.search(SEARCH_STRING);
-        int a = 0;
+        Serch_result serch_result = new Serch_result();
+        String RSG = serch_result.Getresult();
+        boolean contains = RSG.contains("Россельхозбанк");
+        Assertions.assertTrue(contains);
     }
 }
